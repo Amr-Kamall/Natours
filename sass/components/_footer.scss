@@ -1,0 +1,66 @@
+.footer {
+  padding: 10rem 0;
+  background: #2e2d2d;
+  color: $color-gray-ligh-1;
+
+  @include respond(tablet-port) {
+    padding: 8rem 0;
+  }
+
+  &-logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    @include respond(tablet-port) {
+      margin-bottom: 6rem;
+    }
+  }
+  &-logo {
+    width: 14rem;
+  }
+  &-navigation {
+    border-top: 1px solid $color-gray-dark;
+    padding-top: 2rem;
+    display: inline-block;
+
+    @include respond(tablet-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &-list {
+    list-style: none;
+  }
+  &-item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+  &-link {
+    text-decoration: none;
+    color: $color-gray-ligh-1;
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #2e2d2d;
+    transition: all 0.2s;
+
+    &:hover {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      transform: scale(1.1) skewY(5deg);
+      //   transform: scale(1.1) rotate(5deg);
+    }
+  }
+  &-copyright {
+    border-top: 1px solid $color-gray-dark;
+    padding-top: 2rem;
+    width: 80%;
+    float: right;
+    // margin: 0 auto;
+    color: $color-gray-ligh-1;
+    @include respond(tablet-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

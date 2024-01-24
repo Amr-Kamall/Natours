@@ -1,0 +1,106 @@
+.section-about {
+  background: $color-gray-ligh-1;
+  padding: 28rem 0;
+  margin: -13rem 0;
+
+  @media (max-width: 1400px) {
+    margin: -30rem 0;
+  }
+  @media (min-width: 1350px) {
+    padding: 30rem 0;
+    margin: -30rem 0;
+  }
+  @include respond(tablet-port) {
+    padding-bottom: 45rem;
+    padding: 20rem 0 45rem 0;
+  }
+}
+
+.section-features {
+  clip-path: polygon(0 7%, 100% 0%, 100% 91%, 0% 100%);
+
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right,
+      rgba($color-primary-light, 0.9),
+      rgba($color-primary-dark, 0.9)
+    ),
+    url(../images/nat-4.jpg);
+  background-position: top;
+  background-size: cover;
+  @include respond(tablet-port) {
+    padding: 13rem 0;
+  }
+}
+
+.section-tours {
+  background: $color-gray-ligh-1;
+  padding: 20rem 0 4rem 0;
+  margin-top: -23rem;
+  @include respond(tablet-port) {
+    padding: 10rem 0 10rem 0;
+  }
+}
+
+.section-story {
+  display: flex;
+  justify-content: Center;
+  align-items: center;
+  flex-direction: column;
+  padding: 7rem 0;
+  position: relative;
+
+  @include respond(tablet-port) {
+    padding: 4rem 0;
+  }
+}
+.section-book {
+  padding: 15rem;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  @include respond(tablet-port) {
+    padding: 10rem 0;
+  }
+}
+.cover-image {
+  background-image: url(../images/nat-10.jpg);
+  background-size: 100%;
+  height: 50rem;
+  background-repeat: no-repeat;
+  @media (max-width: 1427px) {
+    background-size: cover;
+  }
+}
+.book-form {
+  padding: 7rem 10rem 10rem 10rem;
+  height: 100%;
+  width: 50%;
+  background-color: rgba($color-white, 0.9);
+  clip-path: polygon(0 0, 100% 0%, 82% 100%, 0% 100%);
+  background-position: bottom;
+
+  overflow: hidden;
+  background-size: 100%;
+
+  .heading-secondary {
+    font-size: 3rem;
+  }
+  @media (max-width: 1404px) {
+    clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
+    width: 80%;
+  }
+  @media (max-width: 924px) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    width: 100%;
+  }
+  @include respond(tablet-port) {
+    .heading-secondary {
+      padding-top: 0;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+  }
+}

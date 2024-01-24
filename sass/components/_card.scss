@@ -1,0 +1,263 @@
+.card {
+  height: 50rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  text-align: center;
+  &__side {
+    color: #555;
+    height: 50rem;
+    font-size: 2rem;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    transition: all 0.8s ease;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    border-radius: 7px;
+    overflow: hidden;
+    @include respond(tablet-port) {
+      width: 85%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &--front {
+      background: $color-white;
+    }
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertialy-light,
+          $color-tertialy-dark
+        );
+      }
+    }
+  }
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../images/nat-5.jpg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../images/nat-6.jpg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertialy-light,
+          $color-tertialy-dark
+        ),
+        url(../images/nat-7.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  &__heading-span--1 {
+    background-image: linear-gradient(
+      to right bottom,
+      $color-secondary-light,
+      $color-secondary-dark
+    );
+  }
+  &__heading-span--2 {
+    background-image: linear-gradient(
+      to right bottom,
+      $color-primary-light,
+      $color-primary-dark
+    );
+  }
+  &__heading-span--3 {
+    background-image: linear-gradient(
+      to right bottom,
+      $color-tertialy-light,
+      $color-tertialy-dark
+    );
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      text-align: center;
+      margin: 0 auto;
+      width: 80%;
+
+      li {
+        font-size: 1.5rem;
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-gray-light;
+        }
+      }
+    }
+  }
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+  &__price-only {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+  @media (max-width: 56.25em), (hover: none) {
+    border-radius: 3px;
+    background-color: $color-white;
+    height: auto;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    &__side {
+      box-shadow: none;
+      width: 100%;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      height: auto;
+      position: relative;
+
+      &--back {
+        transform: rotateY(0);
+        clip-path: polygon(0 13%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__cta {
+      position: relative;
+      top: 103px;
+      left: 50%;
+      width: 100%;
+      text-align: Center;
+      padding: 6rem 0;
+    }
+
+    &__price-box {
+      margin: 2rem;
+      text-align: center;
+    }
+
+    &__price-value {
+      font-size: 5rem;
+      text-align: Center;
+    }
+  }
+}
+
+.btn-green:link,
+.btn-green:visited {
+  text-decoration: none;
+  background-color: $color-primary;
+  color: $color-white;
+  /* font-size: 16px; */
+  padding: 1rem 3rem;
+  display: inline-block;
+  border-radius: 10rem;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  user-select: none;
+  position: relative;
+  animation: moveInTop 0.8s ease-in;
+  font-size: 1.6rem;
+}
+
+.btn-green:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn-green:active {
+  transform: translateY(0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn-green::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+  background-color: $color-primary;
+}
+/* ..btn-green::after {
+  background-color: #fff;
+} */
+
+.btn-green:hover::after {
+  transform: scale(1.4);
+  opacity: 0;
+}
